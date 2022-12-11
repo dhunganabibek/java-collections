@@ -2,7 +2,7 @@ package set;
 
 import java.util.Objects;
 
-public class Fruit {
+public class Fruit implements Comparable<Fruit> {
 
   private float price;
   private String color;
@@ -93,5 +93,10 @@ public class Fruit {
 
   public void eat() {
     System.out.println("Do not eat me");
+  }
+
+  @Override
+  public int compareTo(Fruit f) {
+    return (int) (this.getPrice() - f.getPrice());
   }
 }
